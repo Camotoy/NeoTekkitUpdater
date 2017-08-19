@@ -1,11 +1,11 @@
-@echo off
-title Neo Tekkit Updater v0.2
+3@echo off
+title Neo Tekkit Updater v0.3
 
 if exist NeoTekkitUpdaterUpdater.bat (del NeoTekkitUpdaterUpdater.bat)
 
 powershell -Command "Invoke-WebRequest http://76.190.144.116/NeoTekkitVersion.txt -OutFile NeoTekkitVersion.txt"
 set /p version=<NeoTekkitVersion.txt
-if not %version%==0.2 (powershell -Command "Invoke-WebRequest http://76.190.144.116/NeoTekkitUpdaterUpdater.bat -OutFile NeoTekkitUpdaterUpdater.bat"
+if not %version%==0.2 (powershell -Command "Invoke-WebRequest https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitUpdaterUpdater.bat -OutFile NeoTekkitUpdaterUpdater.bat"
 	del NeoTekkitVersion.txt
 	echo Updating the updater...
 	call NeoTekkitUpdaterUpdater.bat
