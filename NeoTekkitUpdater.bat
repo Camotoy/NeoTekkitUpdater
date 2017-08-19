@@ -1,5 +1,5 @@
-@echo off
-title Neo Tekkit Updater v0.2
+3@echo off
+title Neo Tekkit Updater v0.3
 
 if exist NeoTekkitUpdaterUpdater.bat (del NeoTekkitUpdaterUpdater.bat)
 
