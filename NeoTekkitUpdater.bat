@@ -1,6 +1,6 @@
 @echo off
 :: Set variables.
-set batchversion=0.3
+set batchversion=0.4
 set txtUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitVersion.txt
 set updUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitUpdaterUpdater.bat
 set zipUrl=
