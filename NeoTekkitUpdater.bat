@@ -4,6 +4,7 @@ set batchversion=0.4
 set txtUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitVersion.txt
 set updUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitUpdaterUpdater.bat
 set zipUrl=
+set unzipPath="C:\ProgramData\Microsoft\Windows\Start Menu\WinRar.lnk"
 title Neo Tekkit Updater v%batchversion%
 
 :: Clean up.
@@ -32,7 +33,7 @@ if not exist %forge%\..\mods_old\ (mkdir %forge%\..\mods_old\)
 echo Moving old mods folder to %forge%\..\mods_old...
 move %forge%\* %forge%\..\mods_old\
 echo Unzipping with WinRAR to %forge%...
-"C:\ProgramData\Microsoft\Windows\Start Menu\WinRar.lnk" x NeoTekkit.zip *.jar %forge%
+%unzipPath% x NeoTekkit.zip *.jar %forge%
 del NeoTekkit.zip
 echo Done.
 if %txt%==0 (echo I created a file called NeoTekkit.txt in %cd%, so the next time you run this program you don't need to show your Minecraft folder as long as this program and the text file are in the same directory.)
