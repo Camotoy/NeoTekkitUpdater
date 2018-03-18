@@ -4,19 +4,20 @@ set batchversion=0.4
 set txtUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitVersion.txt
 set updUrl=https://github.com/DoctorMacc/NeoTekkitUpdater/raw/master/NeoTekkitUpdaterUpdater.bat
 set zipUrl=
+set updateFile=NeoTekkitUpdaterUpdater.bat
 set unzipPath="C:\ProgramData\Microsoft\Windows\Start Menu\WinRar.lnk"
 title Neo Tekkit Updater v%batchversion%
 
 :: Clean up.
-if exist NeoTekkitUpdaterUpdater.bat (del NeoTekkitUpdaterUpdater.bat)
+if exist %updateFile% (del %updateFile%)
 
 :: Check for an update to the script.
 powershell -Command "Invoke-WebRequest %txtUrl% -OutFile NeoTekkitVersion.txt"
 set /p version=<NeoTekkitVersion.txt
-if not %version%==%batchversion% (powershell -Command "Invoke-WebRequest %updUrl% -OutFile NeoTekkitUpdaterUpdater.bat"
+if not %version%==%batchversion% (powershell -Command "Invoke-WebRequest %updUrl% -OutFile %updateFile"
 	del NeoTekkitVersion.txt
 	echo Updating the updater...
-	call NeoTekkitUpdaterUpdater.bat
+	call %updateFile%
 	exit)
 del NeoTekkitVersion.txt
 
